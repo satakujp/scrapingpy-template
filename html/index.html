@@ -1,0 +1,163 @@
+<html>
+  <head>
+    <script
+      type="text/javascript"
+      src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"
+    ></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        var json = [
+          {
+            "10月25日": "レジ締めお願いします。店長",
+            "10月27日": "棚卸を行います。",
+          },
+          { "10月27日": "27日出勤お願いできませんか？ 鈴木一郎" },
+        ];
+
+        $.each(json, function (i, e) {
+          $.each(e, function (date, value) {
+            $("div.person")
+              .eq(i)
+              .find("td")
+              .each(function (index, ele) {
+                if (date == $(ele).text()) {
+                  $(ele).siblings(":last").text(value);
+                }
+              });
+          });
+        });
+      });
+    </script>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <h1>〇〇店シフト表</h1>
+    <div class="person">
+      <h2 class="name">鈴木一郎</h2>
+      <p class="position">リーダー</p>
+      <p class="employment_status">フルタイム</p>
+      <table class="schedule">
+        <tr>
+          <th>日付</th>
+          <th>曜日</th>
+          <th>出勤時刻</th>
+          <th>退勤時刻</th>
+          <th>伝言</th>
+        </tr>
+        <tr>
+          <td>10月24日</td>
+          <td>月</td>
+          <td>9:00</td>
+          <td>17:00</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>10月25日</td>
+          <td>火</td>
+          <td>9:00</td>
+          <td>17:00</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>10月26日</td>
+          <td>水</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>10月27日</td>
+          <td>木</td>
+          <td>9:00</td>
+          <td>17:00</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>10月28日</td>
+          <td>金</td>
+          <td>9:00</td>
+          <td>17:00</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>10月29日</td>
+          <td>土</td>
+          <td>9:00</td>
+          <td>17:00</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>10月30日</td>
+          <td>日</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="person">
+      <h2 class="name">佐藤花子</h2>
+      <p class="position">アルバイト</p>
+      <p class="employment_status">パートタイム</p>
+      <table class="schedule">
+        <tr>
+          <th>日付</th>
+          <th>曜日</th>
+          <th>出勤時刻</th>
+          <th>退勤時刻</th>
+          <th>伝言</th>
+        </tr>
+        <tr>
+          <td>10月24日</td>
+          <td>月</td>
+          <td>18:00</td>
+          <td>21:00</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>10月25日</td>
+          <td>火</td>
+          <td>19:00</td>
+          <td>21:00</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>10月26日</td>
+          <td>水</td>
+          <td>18:00</td>
+          <td>21:00</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>10月27日</td>
+          <td>木</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>10月28日</td>
+          <td>金</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>10月29日</td>
+          <td>土</td>
+          <td>19:00</td>
+          <td>21:00</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>10月30日</td>
+          <td>日</td>
+          <td>19:00</td>
+          <td>21:00</td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
